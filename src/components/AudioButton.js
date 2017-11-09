@@ -3,9 +3,21 @@ import ReactAudioPlayer from 'react-audio-player'
 
 
 class AudioButton extends Component {
+  state={
+    duration:'',
+    play: false
+  }
+
+  play = () => {
+    this.setstate{
+      play: true
+    }
+  }
+
   render() {
+    
     return (
-      <div className="AudioButton">
+      <div onClick={this.play} className="AudioButton">
        <ReactAudioPlayer src="my_audio_file.ogg" autoPlay controls/>
       </div>
     );
