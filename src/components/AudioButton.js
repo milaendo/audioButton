@@ -1,24 +1,27 @@
 import React, { Component } from 'react'
-import ReactAudioPlayer from 'react-audio-player'
+
 
 
 class AudioButton extends Component {
-  state={
-    duration:'',
-    play: false
-  }
+  state = {
+      duration:'',
+      play: false,
+      displayName:'',
+      url:''
+    }
 
   play = () => {
-    this.setstate{
-      play: true
-    }
+    this.setstate(
+      'play': true
+    )
   }
 
   render() {
-    
+
     return (
-      <div onClick={this.play} className="AudioButton">
-       <ReactAudioPlayer src="my_audio_file.ogg" autoPlay controls/>
+      <div>
+       <audio onClick={this.play} className="AudioButton" src={this.url} autoPlay controls/>
+       <p>{this.displayName}</p>
       </div>
     );
   }
