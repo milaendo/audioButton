@@ -6,29 +6,29 @@ class AudioButton extends Component {
       duration:'',
       play: false,
       displayName:'',
-      url:''
+      url:'http://k002.kiwi6.com/hotlink/f7oefpl27m/Dreams_Piano_and_Violin_Solo_.mp3'
     }
 
-  play = () => { 
+  playAndPause = () => { 
+   if (this.state.play) {
     this.setState({
-      'play': true
-    }
-    )
+      play: false
+    });this.audio.pause()
+  }
+   else {
+    this.setState({
+      play:true
+    });this.audio.play()
+   }
   }
 
-  pause = () => {
-    this.setState({
-      'play': false 
-    }
-    )
-  }
   render() {
 
     return (
-      <div>
-       <audio src={this.state.url}/>
-       <div onClick={this.play} onPause={this.pause} className={!this.state.play ? "play" : "pause"} />
-       <p>{this.state.displayName},{this.state.duration}</p>
+      <div className='wrapper'>
+       <audio src={this.state.url} ref={(audio) => {this.audio = audio}} />
+       <div onClick={this.playAndPause} className={!this.state.play ? "play" : "pause"} />
+       <p className='display_text'>{this.state.displayName},{this.state.duration}</p>
       </div>
     );
   }
