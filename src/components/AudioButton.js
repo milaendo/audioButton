@@ -6,7 +6,7 @@ class AudioButton extends Component {
       duration:'',
       play: false,
       displayName:'',
-      url:'http://k002.kiwi6.com/hotlink/f7oefpl27m/Dreams_Piano_and_Violin_Solo_.mp3'
+      url:'http://k002.kiwi6.com/hotlink/f7oefpl27m/Dreams_Piano_and_Violin_Solo_.wav'
     }
 
   playAndPause = () => { 
