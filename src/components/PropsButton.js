@@ -3,13 +3,13 @@ import React, { Component } from 'react'
 class PropsButton extends Component {
 
 	playAndPause = () => { 
-	 if (this.state.play) {
-	  this.setState({
+	 if (this.props.play) {
+	  this.props({
 	    play: false
 	  });this.audio.pause()
 	}
 	 else {
-	  this.setState({
+	  this.props({
 	    play:true
 	  });this.audio.play()
 	 }
